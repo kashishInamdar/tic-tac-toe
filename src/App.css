@@ -97,13 +97,26 @@
     bottom: 350px;
     width: 350px;
   }
+  .current-player{
+    left: 20%;
+  }
 }
 @media  (max-width: 467px){
   .box{
-    height: 10vh ;
+    height: 15vh ;
+    width: 15vh;
   }
   .t-t-t-container{
     height:90vh ;
   }
+  .current-player{
+    top: -50px;
+    left: 20%;
+  }
+  .X-O-img{
+    margin-left: 6px;
+    margin-top: 5px;
+    font-size: 300%;
+    }
   
 }

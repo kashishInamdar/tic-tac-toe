@@ -26,10 +26,10 @@ function App() {
     9: ""
   })
 
-
+  const [winer , setWiner] = useState(null)
 
   const play = (boxNo) => {
-    if(board[boxNo] !== ""){
+    if(board[boxNo] !== "" || winer !== null){
       return ;
     }
     if(player === 1){
@@ -46,34 +46,34 @@ function App() {
     const symbol = player === 1 ? x : o ;
   
     if(board[1] === symbol && board[2] === symbol && board[3] === symbol ){
-        alert(`${player} player is Win `)
+        setWiner(player)
     }
     if(board[4] === symbol && board[5] === symbol && board[6] === symbol ){
-        alert(`${player} player is Win `)
+      setWiner(player)
     }
     if(board[7] === symbol && board[8] === symbol && board[9] === symbol ){
-        alert(`${player} player is Win `)
+      setWiner(player)
     }
   
     if(board[1] === symbol && board[4] === symbol && board[7] === symbol ){
-        alert(`${player} player is Win `)
+      setWiner(player)
     }
     if(board[2] === symbol && board[5] === symbol && board[8] === symbol ){
-        alert(`${player} player is Win `)
+      setWiner(player)
     }
     if(board[3] === symbol && board[6] === symbol && board[9] === symbol ){
-        alert(`${player} player is Win `)
+      setWiner(player)
     }
   
     if(board[1] === symbol && board[5] === symbol && board[9] === symbol ){
-        alert(`${player} player is Win `)
+      setWiner(player)
     }
     if(board[4] === symbol && board[5] === symbol && board[7] === symbol ){
-        alert(`${player} player is Win `)
+      setWiner(player)
     }
     setPlayer(player === 1 ? 2 : 1)
   }
-  
+
 useEffect(()=>{
 console.log(board)
 checkWin()
@@ -85,8 +85,16 @@ checkWin()
   return (
     <>
       <div className='t-t-t-container'>
+        {
+          winer !== null ? 
+          <p className='current-player'> Player {winer === 1 ? "1  ❌ " : "2 ⭕"} Win 🎉</p>
+          :
+          <p className='current-player'>Current Player {player === 1 ? " 1: ❌" : "2 : ⭕"}</p>
+        }
 
-        <p className='current-player'>Current Player {player === 1 ? " 1: x" : "2 : O"}</p>
+        {/* <p className='current-player'>Current Player {player === 1 ? " 1: x" : "2 : O"}</p> */}
+
+
         <div className='box-row-container'>
           <div className='box-row'>
             <div className='box b-1' onClick={() => { play(1) }}>
