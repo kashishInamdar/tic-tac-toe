@@ -1,6 +1,6 @@
 
 import './App.css';
-
+import Confetti from 'react-confetti'
 import './App.css';
 import X from "./x.png"
 import O from "./o.png"
@@ -93,6 +93,8 @@ function App() {
 useEffect(()=>{
 console.log(board)
 checkWin()
+if(winer !== null){
+}
 
 } , [board])
 
@@ -100,6 +102,10 @@ checkWin()
 
   return (
     <>
+    {
+      winer !== null ? <Confetti /> : ""
+    }
+    
       <div className='t-t-t-container'>
         {
           winer !== null ? 
@@ -110,8 +116,9 @@ checkWin()
 
         {/* <p className='current-player'>Current Player {player === 1 ? " 1: x" : "2 : O"}</p> */}
 
-
+        
         <div className='box-row-container'>
+         
           <div className='box-row'>
             <div className='box b-1' onClick={() => { play(1) }}>
               <span className='X-O-img'>{board[1]} </span>
