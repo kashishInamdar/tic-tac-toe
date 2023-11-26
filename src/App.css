@@ -63,7 +63,6 @@
 .players-container{
   display: flex;
   justify-content: space-around;
-  margin-top: 50px;
   
 }
 .player{
@@ -80,6 +79,22 @@
   position: absolute;
   top: 10px;
   left: 40%;
+}
+.reset-btn{
+  display: block;
+  margin: 0px auto;
+  margin-top: 50px;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #fff;
+  background-color: red;
+}
+.reset-span{
+  display: block;
+  height: 85px;
 }
 
 @media  (max-width: 767px) {
@@ -103,19 +118,19 @@
 }
 @media  (max-width: 467px){
   .box{
-    height: 15vh ;
+    height: 80px ;
     width: 15vh;
   }
   .t-t-t-container{
-    height:90vh ;
+    height:89vh ;
   }
   .current-player{
     top: -50px;
     left: 20%;
   }
   .X-O-img{
-    margin-left: 12px;
-    margin-top: 15px;
+    margin-left: 10px;
+    margin-top: 9px;
     font-size: 300%;
     }
   

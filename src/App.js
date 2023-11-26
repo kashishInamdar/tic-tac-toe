@@ -68,10 +68,26 @@ function App() {
     if(board[1] === symbol && board[5] === symbol && board[9] === symbol ){
       setWiner(player)
     }
-    if(board[4] === symbol && board[5] === symbol && board[7] === symbol ){
+    if(board[3] === symbol && board[5] === symbol && board[7] === symbol ){
       setWiner(player)
     }
     setPlayer(player === 1 ? 2 : 1)
+  }
+
+  const reset = ()=>{
+    setPlayer(1);
+    setBoard({
+    1: "",
+    2: "",
+    3: "",
+    4: "",
+    5: "",
+    6: "",
+    7: "",
+    8: "",
+    9: ""
+    })
+    setWiner(null)
   }
 
 useEffect(()=>{
@@ -133,6 +149,18 @@ checkWin()
           </div>
 
         </div>
+
+        {
+          winer !== null ?
+          <button type='button'
+        onClick={reset}
+         className='reset-btn' >Reset ↻</button>
+         : 
+         <span className='reset-span'>"</span>
+        }
+        {/* <button type='button'
+        onClick={reset}
+         className='reset-btn' >Reset ↻</button> */}
         <div className='players-container'>
           <p className='player'> <img src={X} alt="xo" className='X-O-player' /> :  Player 1  </p>
 
