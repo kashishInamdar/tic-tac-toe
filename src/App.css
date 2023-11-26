@@ -1,38 +1,109 @@
-.App {
+.t-t-t-container{
+  background-color: rgb(0, 0, 0);
+  height: 86vh;
+  width: 70vw;
+  margin: 0px auto;
+  padding-top: 80px;
+  position: relative;
+}
+.titel{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.box-row{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.box{
+  height: 110px;
+  width: 110px;
+  text-align: center;
+}
+.box:hover{
+  z-index: 100;
+  background-color: rgba(33, 27, 27, 0.591);
 }
 
-.App-link {
-  color: #61dafb;
+  .b-1{
+  border-right: 4px solid rgb(240, 246, 249);
+  border-bottom: 4px solid rgb(240, 246, 249);
+  }
+  .b-2{
+  border-right: 4px solid rgb(240, 246, 249);
+  border-bottom: 4px solid rgb(240, 246, 249);
+  }
+  .b-3{
+    border-bottom: 4px solid rgb(240, 246, 249);
+  }
+
+
+  .b-4{
+    border-bottom: 4px solid rgb(240, 246, 249);
+  }
+  .b-5{
+    border-bottom: 4px solid rgb(240, 246, 249);
+    border-left: 4px solid rgb(240, 246, 249);
+    border-right: 4px solid rgb(240, 246, 249);
+  }
+  .b-6{
+    border-bottom: 4px solid rgb(240, 246, 249);
+  }
+
+  .b-8{
+    border-left: 4px solid rgb(240, 246, 249);
+    border-right: 4px solid rgb(240, 246, 249);
+  }
+  
+.X-O-img{
+    margin: 0px auto;
+    margin-top: 20px;
+    font-size: 350%;
+    display: block;
+    }
+
+.players-container{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  
+}
+.player{
+  color: aliceblue;
+  font-size: 20px;
+}
+.X-O-player{
+  width: 20px;
+  margin-left: 2px;
+}
+.current-player{
+  color: aliceblue;
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  left: 40%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media  (max-width: 767px) {
+  .t-t-t-container{
+    height: 80vh;
   }
-  to {
-    transform: rotate(360deg);
+  .X-O-img{
+    width: 50%;
   }
+  .box{
+    height: 20vh ;
+  }
+  .current-player{
+    position: relative;
+    bottom: 350px;
+    width: 350px;
+  }
+}
+@media  (max-width: 467px){
+  .box{
+    height: 10vh ;
+  }
+  .t-t-t-container{
+    height:90vh ;
+  }
+  
 }
