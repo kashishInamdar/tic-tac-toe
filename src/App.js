@@ -13,7 +13,7 @@ function App() {
 
   const x = "❌"
   const o = "⭕"
-  const [player, setPlayer] = useState(2);
+  const [player, setPlayer] = useState(1);
   const [board, setBoard] = useState({
     1: "",
     2: "",
@@ -56,7 +56,7 @@ function App() {
     }
   
     if(board[1] === symbol && board[4] === symbol && board[7] === symbol ){
-      setWiner(player)
+      setWiner(player) 
     }
     if(board[2] === symbol && board[5] === symbol && board[8] === symbol ){
       setWiner(player)
@@ -75,7 +75,7 @@ function App() {
   }
 
   const reset = ()=>{
-    setPlayer(1);
+    setPlayer(player === 1 ? 2 : 1);
     setBoard({
     1: "",
     2: "",
@@ -159,17 +159,18 @@ if(winer !== null){
 
         </div>
 
-        {
-          winer !== null ?
-          <button type='button'
-        onClick={reset}
-         className='reset-btn' >Reset ↻</button>
+        {/* {
+          winer !== null ? 
+                <button type='button'
+              onClick={reset}
+              className='reset-btn' >Reset ↻</button>
          : 
          <span className='reset-span'>"</span>
-        }
-        {/* <button type='button'
-        onClick={reset}
-         className='reset-btn' >Reset ↻</button> */}
+        } */}
+         <button type='button'
+              onClick={reset}
+              className='reset-btn' >Reset ↻</button>
+       
         <div className='players-container'>
           <p className='player'> <img src={X} alt="xo" className='X-O-player' /> :  Player 1  </p>
 
