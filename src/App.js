@@ -102,9 +102,11 @@ if(winer !== null){
 
   return (
     <>
+    <div >
     {
-      winer !== null ? <Confetti /> : ""
+      winer !== null ? <Confetti  /> : ""
     }
+    </div>
     
       <div className='t-t-t-container'>
         {
